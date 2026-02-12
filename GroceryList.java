@@ -131,7 +131,23 @@ public class GroceryList extends Node {
         return ("Your total is: $" + getCost());
     }
 
-    //public one additional method ()
-    //maybe can print a receipt?
-    //Come up with at least one additional method to increase the overall functionality of your grocery list program. Only constraint: cannot be an indexOf() method. This method should be similar in length and robustness to either of the add() methods, remove(), or getGroceryMap().
+    //one additional method:
+    //prints receipt for values in the list with total at the bottom
+    public void printReceipt() throws FileNotFoundException{
+        System.out.println("Your Receipt Here:");
+        System.out.println("-----------------------");
+        //traverse and print through
+        Map<String, Double> map = getGroceryMap();
+        Node curr = head;
+        while(curr != null) {
+            String item = curr.data;
+            if (map.containsKey(item)) {
+                System.out.println(item + " - $" + map.get(item));
+            }
+            curr = curr.next;
+        }
+        //prints total at bottom
+        System.out.println("-----------------------");
+        System.out.println(toString());
+    }
 }
