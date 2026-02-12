@@ -83,7 +83,7 @@ public class GroceryList extends Node {
         while (sc.hasNextLine()){
             String read = sc.nextLine();
             String[] splitted = read.split("\" ");
-            String name = splitted[0];
+            String name = splitted[0].substring(1);
             double price = Double.parseDouble(splitted[1]); //string->double
             mapToRet.put(name, price);
         }
@@ -102,7 +102,7 @@ public class GroceryList extends Node {
         while (sc.hasNextLine()) {
             String read = sc.nextLine();
             String[] splitted = read.split("\" ");
-            names.add(splitted[0]);
+            names.add(splitted[0].substring(1));
         }
         int idx = 0;
         for (int i =0; i< names.size(); i++) {
