@@ -24,4 +24,34 @@ public class GroceryList extends Node {
             curr.next = newItem;
         }
     }
+
+    public void add(String item, int idx) {
+        //Accepts a new grocery item and an index. The function should add that item to the specified index in the linked list.
+        Node newItem = new Node(item);
+        if ((head == null)) {
+            return;
+        } //check using size() once finished writing that method too
+        if (idx == 0) {
+            newItem.next = head;
+            head = newItem;
+        } else {
+            Node curr = head;
+            for(int i=0; i < idx-1; i++) {
+                curr = curr.next;
+            }
+            newItem.next = curr.next;
+            curr.next = newItem;
+        }
+    }
+
+    public int size() {
+        //Returns the number of items in the list.
+        int num = 0;
+        Node curr = head;
+        while (curr!= null){
+            curr = curr.next;
+            num++;
+        }
+        return num;
+    }
 }
