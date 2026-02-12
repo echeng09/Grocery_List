@@ -98,15 +98,10 @@ public class GroceryList extends Node {
         Node curr = head;
         File f = new File(("/Users/echeng/Desktop/HCSS/CS_Seminar/Projects/grocery-items.txt"));
         Scanner sc = new Scanner(f);
-        ArrayList<String> names = new ArrayList<>();
         while (sc.hasNextLine()) {
             String read = sc.nextLine();
             String[] splitted = read.split("\" ");
-            names.add(splitted[0].substring(1));
-        }
-        int idx = 0;
-        for (int i =0; i< names.size(); i++) {
-            tot += (map.get(names.get(idx)));
+            tot += Double.parseDouble(splitted[1]);
         }
         return tot;
     }
