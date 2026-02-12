@@ -1,7 +1,6 @@
 package Grocery_List;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -65,10 +64,9 @@ public class GroceryList extends Node {
         return num;
     }
 
-
     public void remove(int idx) {
         //Removes the grocery item from the list at the specified index.
-        if (((head== null) || idx > size()) || idx <0) {
+        if (((head== null) || idx >= size()) || idx <0) {
             return;
         } else if (idx == 0) {
             head = head.next;
