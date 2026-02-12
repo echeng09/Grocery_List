@@ -30,14 +30,16 @@ public class GroceryList extends Node {
         Node newItem = new Node(item);
         if ((head == null)) {
             return;
-        } //check using size() once finished writing that method too
-        if (idx == 0) {
+        } else if (idx > size() || idx <0) {
+            return;
+        } else if (idx == 0) {
             newItem.next = head;
             head = newItem;
         } else {
             Node curr = head;
             for(int i=0; i < idx-1; i++) {
                 curr = curr.next;
+
             }
             newItem.next = curr.next;
             curr.next = newItem;
