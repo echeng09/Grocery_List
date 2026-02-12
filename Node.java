@@ -1,5 +1,3 @@
-package Grocery_List;
-
 public class Node {
     protected String data;
     protected Node next;
