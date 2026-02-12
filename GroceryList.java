@@ -35,6 +35,7 @@ public class GroceryList extends Node {
         } else if (idx == 0) {
             newItem.next = head;
             head = newItem;
+            return;
         } else {
             Node curr = head;
             for(int i=0; i < idx-1; i++) {
