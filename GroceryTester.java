@@ -27,6 +27,7 @@ public class GroceryTester {
             if (chose == 1) {
                 System.out.println("Item name: ");
                 String incoming = s.nextLine();
+                s.nextLine();
                 list.add(incoming);
                 System.out.println("Added.");
             } else if (chose == 2) {
@@ -34,11 +35,13 @@ public class GroceryTester {
                 String incoming = s.nextLine();
                 System.out.println("Index to add: ");
                 int idx = s.nextInt();
+                s.nextLine();
                 list.add(incoming, idx);
                 System.out.println("Added.");
             } else if (chose == 3) {
                 System.out.print("Index to remove: ");
                 int idx = s.nextInt();
+                s.nextLine();
                 list.remove(idx);
                 System.out.println("Removed.");
             } else if (chose ==4) {
@@ -54,8 +57,11 @@ public class GroceryTester {
 
             System.out.println("Would you like to return to main menu? (yes/no) ");
             String ret = s.nextLine();
-            if(ret == "no") {
+            s.nextLine();
+
+            if (ret == "no") {
                 loop = false;
+                System.out.println("Bye!");
             }
         }
     
@@ -80,3 +86,5 @@ public class GroceryTester {
         */
     }
 }
+
+//javac GroceryTester.java&& java GroceryTester.java
