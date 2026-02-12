@@ -74,4 +74,22 @@ public class GroceryList extends Node {
             curr.next=curr.next.next;
         }
     }
+
+    public Map<String, Double> getGroceryMap() {
+        //This function is a helper method that returns a Map containing each grocery item in the list (key) and its respective price (value).
+        Map<String, Double> mapToRet = new HashMap<>();
+        File f = new File("/Users/echeng/Desktop/HCSS/CS_Seminar/Projects/grocery-items.txt");
+        Scanner sc = new Scanner(f);
+
+        while (sc.hasNextLine()) {
+            String read = sc.nextLine();
+            String[] splitted = read.split("\" ");
+            String name = splitted[0];
+            //turning to a double from string
+            double price = Double.parseDouble(splitted[1]);
+
+            mapToRet.put(name, price);
+        }
+        return mapToRet;
+    }
 }
