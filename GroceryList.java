@@ -61,7 +61,7 @@ public class GroceryList extends Node {
 
     public void remove(int idx) {
         //Removes the grocery item from the list at the specified index.
-        if (((head== null) && idx > size()) || idx <0) {
+        if (((head== null) || idx > size()) || idx <0) {
             return;
         } else if (idx == 0) {
             head = head.next;
