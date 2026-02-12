@@ -1,5 +1,3 @@
-package Grocery_List;
-
 import java.io.FileNotFoundException;
 
 public class GroceryTester {
