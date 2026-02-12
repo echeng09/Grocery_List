@@ -75,21 +75,19 @@ public class GroceryList extends Node {
         }
     }
 
-    public Map<String, Double> getGroceryMap() {
+    public Map<String, Double> getGroceryMap() throws FileNotFoundException{
         //This function is a helper method that returns a Map containing each grocery item in the list (key) and its respective price (value).
         Map<String, Double> mapToRet = new HashMap<>();
-        File f = new File("/Users/echeng/Desktop/HCSS/CS_Seminar/Projects/grocery-items.txt");
+        File f = new File("/Users/echeng/Desktop/HCSS/CS_Seminar/Projects/grocery-items.txt"); //can also do just file name but doesn't work on mine for some reason
         Scanner sc = new Scanner(f);
-
-        while (sc.hasNextLine()) {
+        while (sc.hasNextLine()){
             String read = sc.nextLine();
             String[] splitted = read.split("\" ");
             String name = splitted[0];
-            //turning to a double from string
-            double price = Double.parseDouble(splitted[1]);
-
+            double price = Double.parseDouble(splitted[1]); //string->double
             mapToRet.put(name, price);
         }
+        sc.close();
         return mapToRet;
     }
 }
