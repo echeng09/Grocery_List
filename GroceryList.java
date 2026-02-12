@@ -94,7 +94,7 @@ public class GroceryList extends Node {
     public double getCost() throws FileNotFoundException{
         //Returns the total cost of the grocery trip.
         Map<String, Double> map = getGroceryMap();
-        double tot;
+        double tot = 0;
         Node curr = head;
         File f = new File(("/Users/echeng/Desktop/HCSS/CS_Seminar/Projects/grocery-items.txt"));
         Scanner sc = new Scanner(f);
