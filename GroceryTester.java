@@ -24,13 +24,14 @@ public class GroceryTester {
             System.out.println("6. Exit");
             int chose = s.nextInt();
 
+            //add 1 param
             if (chose == 1) {
                 System.out.println("Item name: ");
                 String incoming = s.nextLine();
                 s.nextLine();
                 list.add(incoming);
                 System.out.println("Added.");
-            } else if (chose == 2) {
+            } else if (chose == 2) { //add 2 param
                 System.out.println("Item name: ");
                 String incoming = s.nextLine();
                 System.out.println("Index to add: ");
@@ -38,17 +39,17 @@ public class GroceryTester {
                 s.nextLine();
                 list.add(incoming, idx);
                 System.out.println("Added.");
-            } else if (chose == 3) {
+            } else if (chose == 3) { //remove
                 System.out.print("Index to remove: ");
                 int idx = s.nextInt();
                 s.nextLine();
                 list.remove(idx);
                 System.out.println("Removed.");
-            } else if (chose ==4) {
+            } else if (chose ==4) { //size
                 System.out.println("You have " + list.size() + " things in your list.");
-            } else if (chose == 5) {
+            } else if (chose == 5) { //print receipt
                 list.printReceipt();
-            } else if (chose == 6) {
+            } else if (chose == 6) { //exit
                 System.out.println("Bye! Have a good day! :)");
                 loop = false;
             } else {
